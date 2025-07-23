@@ -26,20 +26,13 @@ Ok to proceed? (y) y
 √ Install Playwright browsers (can be done manually via 'npx playwright install')? (Y/n) · false
 
 
-
 ```
 
-## Service URL
+## Ejecutar el test por consola
+npx playwright test
+## Ejecutar el test por consola y que dispongan tags
+npx playwright test --grep @test1
 
 ```
-http://localhost:3000/
-```
-
-## Swagger URL
-
-```
-http://localhost:3000/api-docs
-```
-
 
 
