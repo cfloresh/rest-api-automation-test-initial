@@ -26,3 +26,16 @@ test('Crear una nueva mascota', async ({ request }) => {
 
 
 })
+
+test('Crear una nueva mascota 2 con tag',{tag : '@test1'} , async ({ request }) => {
+  /*ejecutamos el servicio con el await y capturamos la respuesta en la constante para luego imprimirla*/
+  const respuesta = await request.post('https://petstore.swagger.io/v2/user', {
+    data: bodyRequest,
+    ignoreHTTPSErrors: true  // Agregado para ignorar errores de HTTPS
+
+  })
+
+  console.log(JSON.stringify(await respuesta.json())) /*IMPRIMO POR CONSOLA LA RESPUESTA */
+
+
+})
