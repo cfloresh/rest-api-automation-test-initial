@@ -2,11 +2,11 @@ import { test, expect, request } from '@playwright/test';
 
 /*metodo get */
 test('CONSULTAR USUARIO ACTUALIZAR',{tag : '@USOPUT'}, async ({ request }) => {
-  const listarMascota = await request.get('https://petstore.swagger.io/v2/user/test4test4', {
+  const listarUsuario = await request.get('https://petstore.swagger.io/v2/user/test4test4', {
     ignoreHTTPSErrors: true 
   })
-  console.log(JSON.stringify(await listarMascota.json())) 
-  const var1 = await listarMascota.json()
+  console.log(JSON.stringify(await listarUsuario.json())) 
+  const var1 = await listarUsuario.json()
 })
 
 /*Metodo Put*/
@@ -22,10 +22,12 @@ test('ACTUALIZAR USUARIO POR ID',{tag :'@USOPUT'}, async ({ request }) => {
   userStatus: 0
 }
 
-   await request.put('https://petstore.swagger.io/v2/user/test4test4', {
+  const usuarioUpdate = await request.put('https://petstore.swagger.io/v2/user/test4test4', {
     data: updatauSERRequest,
     ignoreHTTPSErrors: true 
   })
+
+  console.log(JSON.stringify(await usuarioUpdate.json()))
 
 })
 
